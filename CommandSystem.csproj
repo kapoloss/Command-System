@@ -39,10 +39,10 @@
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
         <Reference Include="UnityEditor, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\Unity3D.SDK.2021.1.14.1\lib\UnityEditor.dll</HintPath>
+          <HintPath>packages\Unity3D.SDK.2021.1.14.1\lib\UnityEditor.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\Unity3D.SDK.2021.1.14.1\lib\UnityEngine.dll</HintPath>
+          <HintPath>packages\Unity3D.SDK.2021.1.14.1\lib\UnityEngine.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -59,6 +59,9 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Documentation\CommandSystem Documentation.pdf" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
