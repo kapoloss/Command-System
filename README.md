@@ -23,31 +23,7 @@ The **Command System** provides:
 ### Video Demonstration:
 [Command System Showcase](https://www.youtube.com/watch?v=rU2XFmPoywY)
 
-## 🧩 Example Commands
-
-### **Color Change Command**
-```csharp
-private Command CreateColorChangeCommand()
-{
-    return new Command(
-        execute: new CommandAction(
-            actionMethod: () => SetMaterial(executeMaterial),
-            new ExecuteType(
-                new WaitSecondExecuteCondition(seconds: 2),
-                new WaitSecondExecuteCondition(seconds: 2)),
-            onStart: () => SetMaterial(waitingMaterial),
-            onComplete: () => SetMaterial(completedMaterial)),
-        undo: new CommandAction(() => SetMaterial(idleMaterial)),
-        new ExecuteType(
-            new WaitSecondExecuteCondition(seconds: 2),
-            new WaitSecondExecuteCondition(seconds: 2),
-            onStart: () => SetMaterial(waitingMaterial),
-            onComplete: () => SetMaterial(cancelledMaterial))
-    );
-}
-
 ---
-
 
 ## 🛠 Key Features
 
@@ -83,3 +59,26 @@ private Command CreateColorChangeCommand()
 ---
 
 
+
+## 🧩 Example Commands
+
+### **Color Change Command**
+```csharp
+private Command CreateColorChangeCommand()
+{
+    return new Command(
+        execute: new CommandAction(
+            actionMethod: () => SetMaterial(executeMaterial),
+            new ExecuteType(
+                new WaitSecondExecuteCondition(seconds: 2),
+                new WaitSecondExecuteCondition(seconds: 2)),
+            onStart: () => SetMaterial(waitingMaterial),
+            onComplete: () => SetMaterial(completedMaterial)),
+        undo: new CommandAction(() => SetMaterial(idleMaterial)),
+        new ExecuteType(
+            new WaitSecondExecuteCondition(seconds: 2),
+            new WaitSecondExecuteCondition(seconds: 2),
+            onStart: () => SetMaterial(waitingMaterial),
+            onComplete: () => SetMaterial(cancelledMaterial))
+    );
+}
